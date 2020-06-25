@@ -28,4 +28,10 @@ public class AmountTest {
 	void add() {
 		assertThat(new Amount(1).add(10)).isEqualTo(new Amount(11));
 	}
+
+	@Test
+	@DisplayName("주어진 값에 양을 곱하는 기능")
+	void multiply() {
+		assertThat(new Amount(10).multiply(100)).isEqualTo(1_000);
+	}
 }

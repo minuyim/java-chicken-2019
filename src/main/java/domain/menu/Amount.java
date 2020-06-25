@@ -26,6 +26,10 @@ public class Amount {
 		return new Amount(amount + other);
 	}
 
+	public int multiply(int price) {
+		return amount * price;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)

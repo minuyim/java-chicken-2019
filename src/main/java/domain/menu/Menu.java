@@ -17,8 +17,16 @@ public class Menu {
         return number == other;
     }
 
+    public boolean isChicken() {
+        return category == Category.CHICKEN;
+    }
+
     @Override
     public String toString() {
         return category + " " + number + " - " + name + " : " + price + "원";
+    }
+
+    public int calculateMultiplePrice(Amount amount) {
+        return amount.multiply(price);
     }
 }
