@@ -1,7 +1,8 @@
-package domain;
+package domain.menu;
 
 import static org.assertj.core.api.Assertions.*;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +10,7 @@ class MenuRepositoryTest {
 	@Test
 	@DisplayName("생성 테스트")
 	void constructor() {
-		assertThat(new MenuRepository()).isNotNull();
+		Assertions.assertThat(new MenuRepository()).isNotNull();
 	}
 
 	@Test
