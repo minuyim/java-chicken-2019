@@ -21,12 +21,12 @@ public class Menu {
         return category == Category.CHICKEN;
     }
 
+    public int calculateMultiplePrice(Amount amount) {
+        return amount.multiply(price);
+    }
+
     @Override
     public String toString() {
         return category + " " + number + " - " + name + " : " + price + "원";
-    }
-
-    public int calculateMultiplePrice(Amount amount) {
-        return amount.multiply(price);
     }
 }
