@@ -36,6 +36,14 @@ public class Table {
         return orderDiscountStrategy.calculate(order);
     }
 
+    public int getNumber() {
+        return number;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
     @Override
     public String toString() {
         return Integer.toString(number);

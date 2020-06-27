@@ -23,6 +23,10 @@ public class TableRepository {
         return Collections.unmodifiableList(tables);
     }
 
+    public List<Table> findAll() {
+        return Collections.unmodifiableList(tables);
+    }
+
     public Optional<Table> findByNumber(int number) {
         return tables.stream()
             .filter(table -> table.isSameNumber(number))

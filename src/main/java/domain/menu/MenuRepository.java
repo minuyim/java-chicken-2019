@@ -28,4 +28,8 @@ public class MenuRepository {
             .filter(menu -> menu.isSameNumber(number))
             .findAny();
     }
+
+    public List<Menu> findAll() {
+        return Collections.unmodifiableList(menus);
+    }
 }
