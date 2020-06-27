@@ -6,10 +6,10 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import domain.order.Amount;
 import domain.menu.Category;
 import domain.menu.Menu;
 import domain.menu.MenuRepository;
+import domain.order.Amount;
 
 class TableTest {
 	@Test

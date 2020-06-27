@@ -34,7 +34,8 @@ public class TableOrderService {
 
 	public void addOrder(TableOrderRequest tableOrderRequest) {
 		Table table = findTableByNumber(tableOrderRequest.getTableNumber());
-		table.addMenu(findMenuByNumber(tableOrderRequest.getMenuNumber()), new Amount(tableOrderRequest.getMenuAmount()));
+		table.addMenu(findMenuByNumber(tableOrderRequest.getMenuNumber()),
+			new Amount(tableOrderRequest.getMenuAmount()));
 	}
 
 	private Menu findMenuByNumber(int number) {

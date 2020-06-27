@@ -24,6 +24,7 @@ public class PaymentService {
 	}
 
 	private Table findTableByNumber(int number) {
-		return tableRepository.findByNumber(number).orElseThrow(() -> new IllegalArgumentException("해당하는 번호의 테이블이 없습니다."));
+		return tableRepository.findByNumber(number)
+			.orElseThrow(() -> new IllegalArgumentException("해당하는 번호의 테이블이 없습니다."));
 	}
 }

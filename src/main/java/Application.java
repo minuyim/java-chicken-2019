@@ -17,10 +17,11 @@ public class Application {
 		InputView inputView = new InputView(new Scanner(System.in));
 
 		ChickenController chickenController = new ChickenController(inputView,
-            new OutputView(), new MenuService(menuRepository),
-            new PaymentService(tableRepository), new TableOrderService(tableRepository, menuRepository));
+			new OutputView(), new MenuService(menuRepository),
+			new PaymentService(tableRepository), new TableOrderService(tableRepository, menuRepository));
 
 		PageController pageController = new PageController(inputView, chickenController);
-		while (pageController.runIfNotExit());
+		while (pageController.runIfNotExit())
+			;
 	}
 }

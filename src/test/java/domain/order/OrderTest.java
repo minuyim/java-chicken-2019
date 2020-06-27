@@ -12,8 +12,6 @@ import org.junit.jupiter.api.Test;
 
 import domain.menu.Category;
 import domain.menu.Menu;
-import domain.order.Amount;
-import domain.order.Order;
 
 public class OrderTest {
 	private Map<Menu, Amount> menuOrders = new HashMap<>();

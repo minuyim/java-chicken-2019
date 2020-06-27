@@ -1,7 +1,7 @@
 package domain.table;
 
-import domain.order.Amount;
 import domain.menu.Menu;
+import domain.order.Amount;
 import domain.order.Order;
 
 public class Table {
