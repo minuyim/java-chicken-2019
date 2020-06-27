@@ -23,12 +23,16 @@ public class Order {
 			.sum();
 	}
 
-	public void add(Menu menu, Amount amount) {
+	public void addMenu(Menu menu, Amount amount) {
 		menuOrders.merge(menu, amount, Amount::sum);
 	}
 
 	public boolean isEmpty() {
 		return menuOrders.isEmpty();
+	}
+
+	public void clear() {
+		menuOrders.clear();
 	}
 
 	public Map<Menu, Amount> getMenuOrders() {

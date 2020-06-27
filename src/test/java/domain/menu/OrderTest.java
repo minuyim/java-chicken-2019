@@ -2,7 +2,6 @@ package domain.menu;
 
 import static org.assertj.core.api.Assertions.*;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -43,7 +42,7 @@ public class OrderTest {
 	@DisplayName("새로운 주문 내역을 추가")
 	void add() {
 		Order order = new Order(menuOrders);
-		order.add(new Menu(3, "다", Category.BEVERAGE, 2_000), new Amount(2));
+		order.addMenu(new Menu(3, "다", Category.BEVERAGE, 2_000), new Amount(2));
 		assertThat(order.getMenuOrders()).hasSize(3);
 	}
 
@@ -51,5 +50,13 @@ public class OrderTest {
 	@DisplayName("주문 내역이 비어있는 지 확인")
 	void isEmpty() {
 		assertThat(new Order(Collections.emptyMap()).isEmpty()).isTrue();
+	}
+
+	@Test
+	@DisplayName("주문 내역 초기화")
+	void clear() {
+		Order order = new Order(menuOrders);
+		order.clear();
+		assertThat(order.isEmpty()).isTrue();
 	}
 }
