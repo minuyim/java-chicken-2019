@@ -13,7 +13,7 @@ public class Table {
     public boolean isSameNumber(int other) {
         return number == other;
     }
-
+    
     @Override
     public String toString() {
         return Integer.toString(number);

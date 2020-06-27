@@ -26,6 +26,10 @@ public class Amount {
 		return new Amount(amount + other);
 	}
 
+	public static Amount sum(Amount first, Amount second) {
+		return new Amount(first.amount + second.amount);
+	}
+
 	public int multiply(int price) {
 		return amount * price;
 	}

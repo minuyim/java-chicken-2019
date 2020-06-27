@@ -34,4 +34,10 @@ public class AmountTest {
 	void multiply() {
 		assertThat(new Amount(10).multiply(100)).isEqualTo(1_000);
 	}
+
+	@Test
+	@DisplayName("서로 다른 Amount를 더하는 기능")
+	void sum() {
+		assertThat(Amount.sum(new Amount(10), new Amount(5))).isEqualTo(new Amount(15));
+	}
 }
