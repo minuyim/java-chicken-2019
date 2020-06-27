@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+import domain.menu.Category;
 import domain.menu.Menu;
 
 public class Order {
@@ -35,6 +36,20 @@ public class Order {
 
 	public void clear() {
 		menuOrders.clear();
+	}
+
+	public int divideCategoryAmountByUnit(Category category, int unit) {
+		if (unit < 0) {
+			throw new IllegalArgumentException("unit의 단위는 0보다 커야 합니다.");
+		}
+		return countAmountByCategory(category) / unit;
+	}
+
+	private int countAmountByCategory(Category category) {
+		return menuOrders.keySet().stream()
+			.filter(menu -> menu.isSameCategory(category))
+			.map(menuOrders::get)
+			.reduce(0, (subTotal, amount) -> amount.calculateSum(subTotal), Integer::sum);
 	}
 
 	public Map<Menu, Amount> getMenuOrders() {

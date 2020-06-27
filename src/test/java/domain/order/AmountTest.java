@@ -42,4 +42,10 @@ public class AmountTest {
 	void sum() {
 		assertThat(Amount.sum(new Amount(10), new Amount(5))).isEqualTo(new Amount(15));
 	}
+
+	@Test
+	@DisplayName("서른 다른 Amount를 더했을 때 값을 나타내는 기능")
+	void calculateSum() {
+		assertThat(new Amount(99).calculateSum(10)).isEqualTo(109);
+	}
 }

@@ -18,8 +18,8 @@ class MenuTest {
 
 	@ParameterizedTest
 	@CsvSource(value = {"CHICKEN, true", "BEVERAGE, false"})
-	void isChicken(Category category, boolean expected) {
-		assertThat(new Menu(1, "치킨일까", category, 10_000).isChicken()).isEqualTo(expected);
+	void isSameCategory(Category category, boolean expected) {
+		assertThat(new Menu(1, "치킨일까", category, 10_000).isSameCategory(Category.CHICKEN)).isEqualTo(expected);
 	}
 
 	@Test

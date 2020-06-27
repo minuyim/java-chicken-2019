@@ -19,8 +19,8 @@ public class Menu {
         return number == other;
     }
 
-    public boolean isChicken() {
-        return category == Category.CHICKEN;
+    public boolean isSameCategory(Category other) {
+        return category == other;
     }
 
     public int calculateMultiplePrice(Amount amount) {

@@ -22,12 +22,16 @@ public class Amount {
 		}
 	}
 
+	public static Amount sum(Amount first, Amount second) {
+		return new Amount(first.amount + second.amount);
+	}
+
 	public Amount add(int other) {
 		return new Amount(amount + other);
 	}
 
-	public static Amount sum(Amount first, Amount second) {
-		return new Amount(first.amount + second.amount);
+	public int calculateSum(int other) {
+		return other + amount;
 	}
 
 	public int multiply(int price) {
