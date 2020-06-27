@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import domain.order.Amount;
+
 class MenuTest {
 	@Test
 	@DisplayName("같은 number를 가지는 지 확인")

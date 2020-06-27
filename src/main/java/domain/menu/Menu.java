@@ -1,5 +1,7 @@
 package domain.menu;
 
+import domain.order.Amount;
+
 public class Menu {
     private final int number;
     private final String name;

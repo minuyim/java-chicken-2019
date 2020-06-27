@@ -1,9 +1,11 @@
-package domain.menu;
+package domain.order;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+
+import domain.menu.Menu;
 
 public class Order {
 	private final Map<Menu, Amount> menuOrders;

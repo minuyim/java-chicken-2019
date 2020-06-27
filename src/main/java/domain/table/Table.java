@@ -1,8 +1,8 @@
-package domain;
+package domain.table;
 
-import domain.menu.Amount;
+import domain.order.Amount;
 import domain.menu.Menu;
-import domain.menu.Order;
+import domain.order.Order;
 
 public class Table {
     private final int number;

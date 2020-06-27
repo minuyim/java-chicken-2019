@@ -1,4 +1,4 @@
-package domain.menu;
+package domain.order;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -9,6 +9,11 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import domain.menu.Category;
+import domain.menu.Menu;
+import domain.order.Amount;
+import domain.order.Order;
 
 public class OrderTest {
 	private Map<Menu, Amount> menuOrders = new HashMap<>();

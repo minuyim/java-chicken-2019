@@ -1,6 +1,6 @@
-package domain;
+package domain.table;
 
-import domain.menu.Order;
+import domain.order.Order;
 
 public class TestOrderDiscountStrategy implements OrderDiscountStrategy {
 	@Override

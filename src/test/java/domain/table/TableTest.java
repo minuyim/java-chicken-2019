@@ -1,11 +1,12 @@
-package domain;
+package domain.table;
 
 import static org.assertj.core.api.Assertions.*;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import domain.menu.Amount;
+import domain.order.Amount;
 import domain.menu.Category;
 import domain.menu.Menu;
 import domain.menu.MenuRepository;
@@ -14,7 +15,7 @@ class TableTest {
 	@Test
 	@DisplayName("테이블이 주어진 번호에 해당하는 지 테스트")
 	void isSameNumber() {
-		assertThat(new Table(1).isSameNumber(1)).isTrue();
+		Assertions.assertThat(new Table(1).isSameNumber(1)).isTrue();
 	}
 
 	@Test
