@@ -7,6 +7,7 @@ import domain.menu.MenuRepository;
 import domain.order.Amount;
 import domain.table.Table;
 import domain.table.TableRepository;
+import service.dto.MenuOrderResponse;
 import service.dto.TableOrderRequest;
 import service.dto.TableResponse;
 
@@ -19,8 +20,8 @@ public class TableOrderService {
 		this.tableRepository = tableRepository;
 	}
 
-	public TableResponse findTable(int number) {
-		return TableResponse.of(findTableByNumber(number));
+	public TableOrderResponse findTableOrder(int number) {
+		return new TableOrderResponse(number, MenuOrderResponse.listOf(findTableByNumber(number).getOrder()));
 	}
 
 	public List<TableResponse> findAllTables() {

@@ -38,6 +38,10 @@ public class Amount {
 		return amount * price;
 	}
 
+	public int getAmount() {
+		return amount;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)

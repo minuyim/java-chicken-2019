@@ -27,4 +27,20 @@ public class MenuResponse {
 	private static MenuResponse of(Menu menu) {
 		return new MenuResponse(menu.getCategoryName(), menu.getNumber(), menu.getName(), menu.getPrice());
 	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
 }
