@@ -12,7 +12,12 @@ public class PageController {
 	}
 
 	public boolean runIfNotExit() {
-		Command command = Command.findByNumber(inputView.inputCommandNumber());
-		return !command.execute(chickenController);
+		try {
+			Command command = Command.findByNumber(inputView.inputCommandNumber());
+			return !command.execute(chickenController);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return true;
+		}
 	}
 }

@@ -17,7 +17,10 @@ public class PaymentService {
 	public PayResponse payOrder(PayRequest payRequest) {
 		Table table = findTableByNumber(payRequest.getTableNumber());
 		Payment payment = Payment.findByNumber(payRequest.getPaymentNumber());
-		return new PayResponse(payment.calculatePay(table.calculatePrice(OrderAmountDiscount.TEN_CHICKEN_DISCOUNT)));
+		PayResponse payResponse = new PayResponse(
+			payment.calculatePay(table.calculatePrice(OrderAmountDiscount.TEN_CHICKEN_DISCOUNT)));
+		table.clearOrder();
+		return payResponse;
 	}
 
 	private Table findTableByNumber(int number) {

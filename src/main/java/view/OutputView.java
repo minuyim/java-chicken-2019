@@ -63,7 +63,7 @@ public class OutputView {
 		System.out.println("## 주문 내역");
 		System.out.println("메뉴 수량 금액");
 		for (MenuOrderResponse menuOrderResponse : menuOrderResponses.getMenuOrderResponses()) {
-			System.out.print(menuOrderResponse.getMenuName() + " " + menuOrderResponse.getAmount() + " "
+			System.out.println(menuOrderResponse.getMenuName() + " " + menuOrderResponse.getAmount() + " "
 				+ menuOrderResponse.getPrice());
 		}
         System.out.println();
