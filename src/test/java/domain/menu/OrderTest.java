@@ -44,7 +44,8 @@ public class OrderTest {
 	@DisplayName("새로운 주문 내역을 추가")
 	void add() {
 		Order order = new Order(Arrays.asList(menuOrder1, menuOrder2));
-		assertThat(order.add(menuOrder3).getMenuOrders()).hasSize(3);
+		order.add(menuOrder3);
+		assertThat(order.getMenuOrders()).hasSize(3);
 	}
 
 	@Test

@@ -23,10 +23,8 @@ public class Order {
 			.sum();
 	}
 
-	public Order add(MenuOrder menuOrder) {
-		List<MenuOrder> newMenuOrders = new ArrayList<>(menuOrders);
-		newMenuOrders.add(menuOrder);
-		return new Order(newMenuOrders);
+	public void add(MenuOrder menuOrder) {
+		menuOrders.add(menuOrder);
 	}
 
 	public boolean isEmpty() {
