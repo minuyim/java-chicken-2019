@@ -2,10 +2,10 @@ package view;
 
 import java.util.List;
 
-import service.TableOrderResponse;
 import service.dto.MenuOrderResponse;
 import service.dto.MenuResponse;
 import service.dto.PayResponse;
+import service.dto.TableOrderResponse;
 import service.dto.TableResponse;
 
 public class OutputView {

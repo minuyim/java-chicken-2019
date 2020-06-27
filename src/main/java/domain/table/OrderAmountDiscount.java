@@ -7,7 +7,7 @@ public enum OrderAmountDiscount implements OrderDiscountStrategy {
 	TEN_CHICKEN_DISCOUNT(order -> (order.calculatePrice() -
 		order.divideCategoryAmountByUnit(Category.CHICKEN, Constants.TEN_CHICKEN) * Constants.TEN_CHICKEN_DISCOUNT));
 
-	private OrderDiscountStrategy orderDiscountStrategy;
+	private final OrderDiscountStrategy orderDiscountStrategy;
 
 	OrderAmountDiscount(OrderDiscountStrategy orderDiscountStrategy) {
 		this.orderDiscountStrategy = orderDiscountStrategy;

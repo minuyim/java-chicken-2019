@@ -6,8 +6,7 @@ import java.util.function.Consumer;
 public enum Command {
 	ORDER(1, ChickenController::order, false),
 	PAY(2, ChickenController::pay, false),
-	EXIT(3, chickenController -> {
-	}, true);
+	EXIT(3, chickenController -> {}, true);
 
 	private final int number;
 	private final Consumer<ChickenController> consumer;

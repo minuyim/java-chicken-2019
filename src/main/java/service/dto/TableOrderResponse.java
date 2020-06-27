@@ -1,8 +1,6 @@
-package service;
+package service.dto;
 
 import java.util.List;
-
-import service.dto.MenuOrderResponse;
 
 public class TableOrderResponse {
 	private int tableNumber;

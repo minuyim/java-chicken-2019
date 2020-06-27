@@ -6,7 +6,7 @@ public enum Payment {
 	CARD(1, price -> price),
 	CASH(2, price -> (int)(0.95 * price));
 
-	private int number;
+	private final int number;
 	private final PricingDiscountStrategy pricingDiscountStrategy;
 
 	Payment(int number, PricingDiscountStrategy pricingDiscountStrategy) {

@@ -9,6 +9,7 @@ import domain.table.Table;
 import domain.table.TableRepository;
 import service.dto.MenuOrderResponse;
 import service.dto.TableOrderRequest;
+import service.dto.TableOrderResponse;
 import service.dto.TableResponse;
 
 public class TableOrderService {
