@@ -36,6 +36,13 @@ public class Table {
         return orderDiscountStrategy.calculate(order);
     }
 
+    public Order getOrderIfExist() {
+        if (isOrderEmpty()) {
+            throw new IllegalStateException("주문이 비어있습니다.");
+        }
+        return getOrder();
+    }
+
     public int getNumber() {
         return number;
     }

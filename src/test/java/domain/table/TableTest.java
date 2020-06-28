@@ -57,4 +57,21 @@ class TableTest {
 		table.addMenu(new Menu(1, "가", Category.CHICKEN, 10_000), Amount.of(10));
 		assertThat(table.calculatePrice(new TestOrderDiscountStrategy())).isEqualTo(50_000);
 	}
+
+	@Test
+	@DisplayName("테이블의 주문 내역이 있는 경우 Order를 반환한다.")
+	void getOrderIfExist() {
+		Table table = new Table(1);
+		table.addMenu(new Menu(1, "가", Category.CHICKEN, 10_000), Amount.of(10));
+		assertThat(table.getOrderIfExist()).isNotNull();
+	}
+
+	@Test
+	@DisplayName("테이블의 주문 내역이 없는 경우 예외를 발생시킨다.")
+	void getOrderIfExistException() {
+		Table table = new Table(1);
+		assertThatThrownBy(table::getOrderIfExist)
+			.isInstanceOf(IllegalStateException.class)
+			.hasMessageContaining("비어");
+	}
 }

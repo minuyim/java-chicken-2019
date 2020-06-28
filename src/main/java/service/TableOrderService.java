@@ -22,11 +22,7 @@ public class TableOrderService {
 	}
 
 	public TableOrderResponse findTableOrder(int number) {
-		Table table = findTableByNumber(number);
-		if (table.isOrderEmpty()) {
-			throw new IllegalArgumentException("주문이 비어 있습니다.");
-		}
-		return new TableOrderResponse(number, MenuOrderResponse.listOf(table.getOrder()));
+		return new TableOrderResponse(number, MenuOrderResponse.listOf(findTableByNumber(number).getOrderIfExist()));
 	}
 
 	public List<TableResponse> findAllTables() {
