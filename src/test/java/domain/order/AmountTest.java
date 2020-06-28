@@ -10,15 +10,21 @@ import org.junit.jupiter.params.provider.ValueSource;
 public class AmountTest {
 	@Test
 	@DisplayName("생성 테스트")
-	void constructor() {
-		assertThat(new Amount(1)).isNotNull();
+	void of() {
+		assertThat(Amount.of(1)).isNotNull();
+	}
+
+	@Test
+	@DisplayName("같은 값이면 같은 객체인지 확인")
+	void ofEqualObject() {
+		assertThat(Amount.of(1)).isEqualTo(Amount.of(1));
 	}
 
 	@ParameterizedTest
 	@DisplayName("생성 테스트 - 범위를 벗어날 시 예외 처리")
 	@ValueSource(ints = {0, 100})
-	void constructorNegativeException(int amount) {
-		assertThatThrownBy(() -> new Amount(amount))
+	void ofNegativeException(int amount) {
+		assertThatThrownBy(() -> Amount.of(amount))
 			.isInstanceOf(IllegalArgumentException.class)
 			.hasMessageContaining("메뉴 주문은");
 	}
@@ -26,24 +32,24 @@ public class AmountTest {
 	@Test
 	@DisplayName("주문 수량을 더하는 기능")
 	void add() {
-		assertThat(new Amount(1).add(10)).isEqualTo(new Amount(11));
+		assertThat(Amount.of(1).add(10)).isEqualTo(Amount.of(11));
 	}
 
 	@Test
 	@DisplayName("주어진 값에 양을 곱하는 기능")
 	void multiply() {
-		assertThat(new Amount(10).multiply(100)).isEqualTo(1_000);
+		assertThat(Amount.of(10).multiply(100)).isEqualTo(1_000);
 	}
 
 	@Test
 	@DisplayName("서로 다른 Amount를 더하는 기능")
 	void sum() {
-		assertThat(Amount.sum(new Amount(10), new Amount(5))).isEqualTo(new Amount(15));
+		assertThat(Amount.sum(Amount.of(10), Amount.of(5))).isEqualTo(Amount.of(15));
 	}
 
 	@Test
 	@DisplayName("서른 다른 Amount를 더했을 때 값을 나타내는 기능")
 	void calculateSum() {
-		assertThat(new Amount(99).calculateSum(10)).isEqualTo(109);
+		assertThat(Amount.of(99).calculateSum(10)).isEqualTo(109);
 	}
 }

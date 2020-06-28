@@ -18,8 +18,8 @@ public class OrderTest {
 
 	@BeforeEach
 	void setUp() {
-		menuOrders.put(new Menu(1, "가", Category.CHICKEN, 10_000), new Amount(10));
-		menuOrders.put(new Menu(2, "나", Category.CHICKEN, 15_000), new Amount(5));
+		menuOrders.put(new Menu(1, "가", Category.CHICKEN, 10_000), Amount.of(10));
+		menuOrders.put(new Menu(2, "나", Category.CHICKEN, 15_000), Amount.of(5));
 	}
 
 	@Test
@@ -45,7 +45,7 @@ public class OrderTest {
 	@DisplayName("새로운 주문 내역을 추가")
 	void add() {
 		Order order = new Order(menuOrders);
-		order.addMenu(new Menu(3, "다", Category.BEVERAGE, 2_000), new Amount(2));
+		order.addMenu(new Menu(3, "다", Category.BEVERAGE, 2_000), Amount.of(2));
 		assertThat(order.getMenuOrders()).hasSize(3);
 	}
 

@@ -25,7 +25,7 @@ class MenuTest {
 	@Test
 	@DisplayName("주문 수량에 맞게 가격을 계산하는 기능")
 	void calculateMultiplePrice() {
-		assertThat(new Menu(1, "치킨", Category.CHICKEN, 12_000).calculateMultiplePrice(new Amount(10)))
+		assertThat(new Menu(1, "치킨", Category.CHICKEN, 12_000).calculateMultiplePrice(Amount.of(10)))
 			.isEqualTo(120_000);
 	}
 }

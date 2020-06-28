@@ -1,6 +1,7 @@
 package domain.order;
 
-import java.util.Objects;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Amount {
 	private static final int MAX = 99;
@@ -8,12 +9,12 @@ public class Amount {
 
 	private final int amount;
 
-	public Amount(int amount) {
+	private Amount(int amount) {
 		validate(amount);
 		this.amount = amount;
 	}
 
-	private void validate(int amount) {
+	private static void validate(int amount) {
 		if (amount < MIN) {
 			throw new IllegalArgumentException("메뉴 주문은 " + MIN + "개보다 적을 수 없습니다. amount : " + amount);
 		}
@@ -22,12 +23,17 @@ public class Amount {
 		}
 	}
 
+	public static Amount of(int amount) {
+		validate(amount);
+		return AmountCache.CACHE.get(amount);
+	}
+
 	public static Amount sum(Amount first, Amount second) {
-		return new Amount(first.amount + second.amount);
+		return Amount.of(first.amount + second.amount);
 	}
 
 	public Amount add(int other) {
-		return new Amount(amount + other);
+		return Amount.of(amount + other);
 	}
 
 	public int calculateSum(int other) {
@@ -42,18 +48,16 @@ public class Amount {
 		return amount;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
-		Amount amount1 = (Amount)o;
-		return amount == amount1.amount;
-	}
+	private static class AmountCache {
+		private static Map<Integer, Amount> CACHE = new HashMap<>();
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(amount);
+		static {
+			for (int i = MIN; i <= MAX; i++) {
+				CACHE.put(i, new Amount(i));
+			}
+		}
+
+		private AmountCache() {
+		}
 	}
 }
