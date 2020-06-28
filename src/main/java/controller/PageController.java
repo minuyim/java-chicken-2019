@@ -11,13 +11,12 @@ public class PageController {
 		this.chickenController = chickenController;
 	}
 
-	public boolean runIfNotExit() {
+	public void run() {
 		try {
 			Command command = Command.findByNumber(inputView.inputCommandNumber());
-			return !command.execute(chickenController);
+			command.execute(chickenController);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			return true;
 		}
 	}
 }

@@ -21,7 +21,8 @@ public class Application {
 			new PaymentService(tableRepository), new TableOrderService(tableRepository, menuRepository));
 
 		PageController pageController = new PageController(inputView, chickenController);
-		while (pageController.runIfNotExit()) {
+		while (true) {
+			pageController.run();
 		}
 	}
 }
