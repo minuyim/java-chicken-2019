@@ -18,7 +18,7 @@ public enum Payment {
 		return Arrays.stream(values())
 			.filter(payment -> payment.number == number)
 			.findAny()
-			.orElseThrow(() -> new IllegalArgumentException("해당하는 결제 수단이 존재하지 않습니다."));
+			.orElseThrow(() -> new IllegalArgumentException("해당하는 결제 수단이 존재하지 않습니다. number : " + number));
 	}
 
 	public int calculatePay(int price) {

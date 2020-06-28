@@ -40,7 +40,7 @@ public class Order {
 
 	public int divideCategoryAmountByUnit(Category category, int unit) {
 		if (unit < 0) {
-			throw new IllegalArgumentException("unit의 단위는 0보다 커야 합니다.");
+			throw new IllegalArgumentException("unit의 단위는 0보다 커야 합니다. unit : " + unit);
 		}
 		return countAmountByCategory(category) / unit;
 	}

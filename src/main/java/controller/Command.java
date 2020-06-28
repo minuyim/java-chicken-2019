@@ -20,7 +20,7 @@ public enum Command {
 		return Arrays.stream(values())
 			.filter(command -> command.number == number)
 			.findAny()
-			.orElseThrow(() -> new IllegalArgumentException("값에 해당하는 명령이 없습니다."));
+			.orElseThrow(() -> new IllegalArgumentException("값에 해당하는 명령이 없습니다. number : " + number));
 	}
 
 	public void execute(ChickenController chickenController) {

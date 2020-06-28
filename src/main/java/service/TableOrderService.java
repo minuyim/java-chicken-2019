@@ -37,11 +37,11 @@ public class TableOrderService {
 
 	private Menu findMenuByNumber(int number) {
 		return menuRepository.findByNumber(number)
-			.orElseThrow(() -> new IllegalArgumentException("해당하는 번호의 메뉴가 없습니다."));
+			.orElseThrow(() -> new IllegalArgumentException("해당하는 번호의 메뉴가 없습니다. number : " + number));
 	}
 
 	private Table findTableByNumber(int number) {
 		return tableRepository.findByNumber(number)
-			.orElseThrow(() -> new IllegalArgumentException("해당하는 번호의 테이블이 없습니다."));
+			.orElseThrow(() -> new IllegalArgumentException("해당하는 번호의 테이블이 없습니다. number :" + number));
 	}
 }
